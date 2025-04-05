@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dark Web Risk Analyzer</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Dark Web Risk Analyzer</h1>
+    <form method="POST">
+        <input name="url" placeholder="Enter .onion URL" required>
+        <button type="submit">Scan</button>
+    </form>
+    {% if data %}
+        <h2>Scan Results</h2>
+        <p><b>Emails:</b> {{ data.emails }}</p>
+        <p><b>IPs:</b> {{ data.ips }}</p>
+        <p><b>BTC Wallets:</b> {{ data.btc_wallets }}</p>
+        <p><b>Bitcoin Analysis:</b> {{ btc_data }}</p>
+        <p><b>Risk Level:</b> {{ risk }}</p>
+    {% endif %}
+</body>
+</html>
